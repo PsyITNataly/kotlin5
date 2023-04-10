@@ -7,7 +7,7 @@ class WallServiceTest {
 
     @Test
     fun addTest() {
-        val post = Post(0, Likes(0))
+        val post = Post(0, Likes(0), 0,0,0,0,0,"No","No")
 
         val result = WallService.add(post)
 
@@ -21,7 +21,7 @@ class WallServiceTest {
 
     @Test
     fun updateTestFalse() {
-        val newPost = Post(0, Likes(0))
+        val newPost = Post(0, Likes(0),0,0,0,0,0,"No","No")
 
         val result = WallService.update(newPost)
 
@@ -32,11 +32,11 @@ class WallServiceTest {
     @Test
     fun updateTestTrue() {
         val service = WallService
-        service.add(Post(1,Likes(0)))
-        service.add(Post(2,Likes(0)))
-        service.add(Post(3,Likes(0)))
+        service.add(Post(1,Likes(0),0,0,0,0,0,"No","No"))
+        service.add(Post(2,Likes(0),0,0,0,0,0,"No","No"))
+        service.add(Post(3,Likes(0),0,0,0,0,0,"No","No"))
 
-        val update = Post(1,Likes(0))
+        val update = Post(1,Likes(0),0,0,0,0,0,"No","No")
 
 
         val result = service.update(update)

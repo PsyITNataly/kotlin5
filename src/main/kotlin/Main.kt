@@ -4,7 +4,14 @@ data class Likes(
 
 data class Post(
     val id: Int,
-    val likes: Likes
+    val likes: Likes,
+    val owenId: Int,
+    val fromId: Int,
+    val data: Int,
+    val replyOwnerId: Int,
+    val replyPostId: Int,
+    val copywriter: String,
+    val portType: String
 )
 
 object WallService {
@@ -41,9 +48,9 @@ object WallService {
 
 fun main() {
     val likes = Likes(0)
-    val post = Post(0, likes)
+    val post = Post(0, Likes(0), 0, 0, 0, 0, 0, "No", "No", )
     WallService.add(post)
-    WallService.add(Post(0, Likes(10)))
+    WallService.add(Post(0, Likes(10),0,0,0,0,0, "No", "No"))
     WallService.printPosts()
     likes.count += 10
     WallService.printPosts()
