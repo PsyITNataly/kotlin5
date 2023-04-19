@@ -7,7 +7,17 @@ class WallServiceTest {
 
     @Test
     fun addTest() {
-        val post = Post(0, Likes(0), 0,0,0,0,0,"No","No")
+        val post = Post(
+            id = 0,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        )
 
         val result = WallService.add(post)
 
@@ -21,7 +31,17 @@ class WallServiceTest {
 
     @Test
     fun updateTestFalse() {
-        val newPost = Post(0, Likes(0),0,0,0,0,0,"No","No")
+        val newPost = Post(
+            id = 0,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        )
 
         val result = WallService.update(newPost)
 
@@ -32,11 +52,51 @@ class WallServiceTest {
     @Test
     fun updateTestTrue() {
         val service = WallService
-        service.add(Post(1,Likes(0),0,0,0,0,0,"No","No"))
-        service.add(Post(2,Likes(0),0,0,0,0,0,"No","No"))
-        service.add(Post(3,Likes(0),0,0,0,0,0,"No","No"))
+        service.add(Post(
+            id = 1,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        ))
+        service.add(Post(
+            id = 2,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        ))
+        service.add(Post(
+            id = 3,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        ))
 
-        val update = Post(1,Likes(0),0,0,0,0,0,"No","No")
+        val update = Post(
+            id = 1,
+            likes = Likes(0),
+            owenId = 0,
+            fromId = 0,
+            data = 0,
+            replyOwnerId = 0,
+            replyPostId = 0,
+            copywriter = "No",
+            portType = "No"
+        )
 
 
         val result = service.update(update)
