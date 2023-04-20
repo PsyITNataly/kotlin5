@@ -1,25 +1,17 @@
 interface Attachment {
     val type: String
 }
-abstract class VideoAttachment(
+class VideoAttachment(
     override val type: String,
-    open val video: Video
-) : Attachment
-class Video(
     val id: Int = 1,
     val ownerId: Int = 1,
     val title: String? = "A Funny Video",
     val duration: Int = 30,
     val description: String,
-    override val video: Video,
-    type: String
-) : VideoAttachment(type, video)
-
-abstract class PhotoAttachment(
-    override val type: String,
-    open val photo: Photo
 ) : Attachment
-class Photo(
+
+class PhotoAttachment(
+    override val type: String,
     val id: Int = 1,
     val album_id: Int,
     val owner_id: Int = 1,
@@ -28,9 +20,7 @@ class Photo(
     val data: Int,
     val photo_130: String = "https://vk.com/some_photo_link",
     val photo_604: String = "https://vk.com/another_photo_link",
-    type: String,
-    override val photo: Photo
-) : PhotoAttachment(type, photo)
+) : Attachment
 
 class Audio(
     val id: Int,
